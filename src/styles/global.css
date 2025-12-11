@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.center {
+    display: flex;
+    max-width: 1100px;
+    padding: 0 2%;
+    margin: 0 auto;
+}
+
+section.header {
+    background-image: url(assets\imgs\back.svg);
+    background-position: center;
+    background-size: cover;
+    min-height: 700px;
+}
