@@ -12,8 +12,29 @@
 }
 
 section.header {
-    background-image: url(assets\imgs\back.svg);
+    background-image: url("../assets/imgs/back.svg");
     background-position: center;
     background-size: cover;
     min-height: 700px;
 }
+
+.logo_menu {
+    width: 100%;
+}
+
+.nav_container {
+    color: #fff;
+    width: 100%;
+}
+
+.nav_list a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav_list {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
