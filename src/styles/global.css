@@ -1,7 +1,13 @@
+
+@import url("https://use.typekit.net/ibx3sum.css");
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "raleway", sans-serif;
+    font-weight: 400px;
+    font-style: normal;
 }
 
 .center {
@@ -18,13 +24,16 @@ section.header {
     min-height: 700px;
 }
 
+/* -------------------------------------------TOPO e MENU----------------------------------------- */
 .logo_menu {
     width: 100%;
+    margin-top: 20px;
 }
 
 .nav_container {
     color: #fff;
     width: 100%;
+    margin-top: 30px;
 }
 
 .nav_list a {
@@ -34,7 +43,43 @@ section.header {
 
 .nav_list {
     display: flex;
+    width: 100%;
     gap: 30px;
     list-style: none;
 }
 
+.nav_list a:hover {
+    border-bottom: solid 2px #FFDD33;
+}
+
+
+/* ------------------------------------------EM BAIXO DO MENU------------------------------------------- */
+
+.bloco2 {
+    display: block;
+    padding-top: 60px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.imgmock {
+    width: 750px;
+    padding-top: 50px;
+
+}
+
+/* ------------------------------------LOGS PARCEIROS-------------------------------------------------------------- */
+
+.parceiros {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding-top: 100px;
+    width: 100%;
+}
+
+.parceiros > img {
+    width: 200px
+}
