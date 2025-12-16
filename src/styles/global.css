@@ -55,7 +55,7 @@ section.header {
 
 /* ------------------------------------------EM BAIXO DO MENU------------------------------------------- */
 
-.bloco2 {
+.bloco {
     display: block;
     padding-top: 60px;
     width: 100%;
@@ -69,17 +69,87 @@ section.header {
 
 }
 
-/* ------------------------------------LOGS PARCEIROS-------------------------------------------------------------- */
+/* ------------------------------------LOGOS PARCEIROS-------------------------------------------------------------- */
 
 .parceiros {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    flex-direction: row;
     padding-top: 100px;
     width: 100%;
 }
 
 .parceiros > img {
-    width: 200px
+    width: 150px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+/* -----------------------------------------------TEXTO EM BAIXO DA LOGO-------------------------------------------------------------------- */
+
+.texto_embaixo_logo {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.texto_embaixo_logo {
+    font-size: 20px;
+}
+
+/* -----------------------------------------------RESULTADOS-------------------------------------------------------------------- */
+
+.resultados {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+}
+
+.bloco1, .bloco2, .bloco3 {
+    width: 450px;
+    min-height: 300px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px 5px #e4dcdc;
+    padding: 40px;
+    transition: 0.3s;
+}
+
+.bloco1:hover, .bloco2:hover, .bloco3:hover {
+    transform: scale(1.03);
+}
+
+/* -----------------------------------------------RESULTADOS-------------------------------------------------------------------- */
+
+/* -----------------------------------------------CTA-------------------------------------------------------------------- */
+
+.cta {
+    background-image: url("../assets/imgs/BANNERIMG/BANNERIMG.png");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 300px;
+}
+
+.cta .faixa {
+    color: #fff;
+}
+
+.faixa .btn_cta {
+    border: none;
+    border-radius: 5px;
+    padding: 13px;
+    font-size: 15px;
+    background-color: #FFDD33;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.btn_cta:hover {
+    transform: scale(1.03);
 }
