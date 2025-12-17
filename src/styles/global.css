@@ -1,6 +1,3 @@
-
-@import url("https://use.typekit.net/ibx3sum.css");
-
 :root {
     --primary-color: #FFDD33;
     --secondary-color: #255AFF;
@@ -17,8 +14,12 @@
     margin: 0;
     box-sizing: border-box;
     font-family: var(--font-family);
-    font-weight: var(--font-weight-normal);
+    font-weight: normal;
     font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .center {
@@ -28,14 +29,14 @@
     margin: 0 auto;
 }
 
-section.header {
+/* ---------------- HEADER ---------------- */
+.header-container {
     background-image: url("../assets/imgs/back.svg");
     background-position: center;
     background-size: cover;
     min-height: 700px;
 }
 
-/* -------------------------------------------TOPO e MENU----------------------------------------- */
 .logo_menu {
     width: 100%;
     margin-top: 20px;
@@ -43,14 +44,9 @@ section.header {
 
 .nav_container {
     font-weight: bold;
-    color: #fff;
+    color: var(--white);
     width: 100%;
     margin-top: 30px;
-}
-
-.nav_list a {
-    color: #fff;
-    text-decoration: none;
 }
 
 .nav_list {
@@ -60,19 +56,22 @@ section.header {
     list-style: none;
 }
 
+.nav_list a {
+    color: var(--white);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
 .nav_list a:hover {
     border-bottom: solid 2px var(--primary-color);
 }
 
-
-/* ------------------------------------------EM BAIXO DO MENU------------------------------------------- */
-
-.bloco {
+.hero-section {
     display: block;
     padding-top: 60px;
     width: 100%;
     text-align: center;
-    color: #fff;
+    color: var(--white);
 }
 
 .imgmock {
@@ -82,8 +81,7 @@ section.header {
     padding-top: 50px;
 }
 
-/* ------------------------------------LOGOS PARCEIROS-------------------------------------------------------------- */
-
+/* ---------------- PARCEIROS ---------------- */
 .parceiros {
     display: flex;
     align-items: center;
@@ -99,38 +97,26 @@ section.header {
     height: auto;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------- */
-
-/* -----------------------------------------------TEXTO EM BAIXO DA LOGO----------------------------------------------  */
-
 .texto_embaixo_logo {
     padding-top: 100px;
     text-align: center;
-}
-
-.texto_embaixo_logo {
     font-size: 20px;
 }
 
-/* -----------------------------------------------RESULTADOS----------------------------------------------------------   */
-
+/* ---------------- RESULTADOS --------------- */
 .resultados {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding: 100px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
-    align-items: center;
+    align-items: stretch; 
     flex-wrap: wrap;
     gap: 20px;
 }
 
-.resultados p {
-    color: var(--text-color);
-}
-
-.bloco1, .bloco2, .bloco3 {
+/* Cards */
+.card-resultado {
     max-width: 450px;
     width: 100%;
     min-height: 300px;
@@ -139,16 +125,22 @@ section.header {
     box-shadow: 5px 5px 20px 5px var(--shadow-color);
     padding: 40px;
     transition: 0.3s;
+    background: var(--white);
 }
 
-.bloco1:hover, .bloco2:hover, .bloco3:hover {
+.card-resultado:hover {
     transform: scale(1.03);
 }
 
-/* -----------------------------------------------RESULTADOS------------------------------------------------------------ */
+.card-resultado h3 {
+    margin-bottom: 15px;
+}
 
-/* -----------------------------------------------CTA-------------------------------------------------------------------- */
+.card-resultado p {
+    color: var(--text-color);
+}
 
+/* ---------------- CTA ---------------- */
 .cta {
     background-image: url("../assets/imgs/BANNERIMG/BANNERIMG.png");
     background-position: center;
@@ -161,25 +153,25 @@ section.header {
 }
 
 .cta .faixa {
-    color: #fff;
+    color: var(--white);
 }
 
-.faixa .btn_cta {
+.btn_cta {
     border: none;
     border-radius: 5px;
-    padding: 13px;
+    padding: 13px 25px;
     font-size: 15px;
     background-color: var(--primary-color);
+    font-weight: bold;
     transition: 0.4s;
     cursor: pointer;
 }
 
 .btn_cta:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
-/* ---------------------------------------------BENEFICIOS---------------------------------------------------------------------- */
-
+/* ---------------- BENEFÍCIOS ---------------- */
 .beneficios {
     padding: 50px 0;
 }
@@ -187,6 +179,9 @@ section.header {
 .conteudo {
     display: flex;
     align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--padding-side);
 }
 
 .check {
@@ -195,134 +190,144 @@ section.header {
 
 .imagem_conteudo {
     width: 60%;
-}
-
-.check img {
-    display: inline-block;
-    vertical-align: middle;
-    width: 70px;
-}
-
-.check p {
-    color: var(--text-color);
-    vertical-align: middle;
-    font-size: 14px;
-}
-
-.check span {
-    display: inline-block;
-    width: calc(100% - 70px);
+    text-align: right;
 }
 
 .imagem_conteudo img {
     max-width: 100%;
 }
 
-.check h1 {
-    padding-left: 40px;
+.check h2 {
+    margin-bottom: 20px;
 }
 
-.check button {
-    padding: 15px 25px 15px 25px;
-    margin-left: 70px;
+.check-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.check-item img {
+    width: 30px;
+    flex-shrink: 0;
+}
+
+.check-item span {
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.btn-secundario {
+    padding: 15px 25px;
+    margin-top: 20px;
     border-radius: 5px;
     border: none;
     background-color: var(--secondary-color);
     color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
     transition: 0.4s;
 }
 
-.check button:hover{
+.btn-secundario:hover {
     transform: scale(1.03);
+    filter: brightness(1.1);
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------------ */
-
-/* ---------------------------------------------DEPOIMENTOS---------------------------------------------------------------------- */
-
-.box_depoimentos {
-    display: flex;
-    justify-content: space-evenly;
+/* ---------------- DEPOIMENTOS  ---------------- */
+.depoimentos {
     padding: 50px 0;
-}
-
-.box1, .box2, .box3 {
-    text-align: center;
-    max-width: 450px;
-    width: 100%;
-    min-height: 300px;
-    border: 3px solid var(--white);
-    border-radius: 10px;
-    box-shadow: 5px 5px 20px 5px var(--shadow-color);
-    padding: 40px;
-    transition: 0.3s;
+    background-color: #fafafa;
 }
 
 .titulo {
     text-align: center;
     font-weight: bold;
+    margin-bottom: 30px;
 }
 
-.box1 p, .box2 p, .box3 p {
-    padding: 10px 0px 30px 0px;
+.box_depoimentos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+/* Depoimentos */
+.card-depoimento {
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
+    background: var(--white);
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
+    padding: 40px 20px;
+    transition: 0.3s;
+}
+
+.card-depoimento:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-depoimento img {
+    margin-bottom: 15px;
+}
+
+.card-depoimento p.cargo {
     color: var(--text-color);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
 }
 
-/*Bolinhas*/
+.card-depoimento p:not(.cargo) {
+    color: #555;
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
 
-.bolinhas {
+/* Bolinhas de Navegação */
+.nav-dots {
     display: flex;
     justify-content: center;
     gap: 10px;
-    flex-direction: row;
+    margin-top: 20px;
 }
 
-.bolinha1, .bolinha2, .bolinha3 {
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-}
-
-.bolinha1 {
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
     background-color: var(--text-color);
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.bolinha2 {
+.dot.active, .dot:hover {
     background-color: var(--secondary-color);
+    opacity: 1;
+    transform: scale(1.2);
 }
 
-.bolinha3 {
-    background-color: var(--text-color);
-}
-
-.box1:hover, .box2:hover, .box3:hover {
-    transform: scale(1.03);
-}
-
-/* ------------------------------------------------RODAPE----------------------------------------------------------------------- */
-
+/* ---------------- RODAPÉ ---------------- */
 .roda_pe {
     font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    padding: 30px var(--padding-side);
     background-color: var(--secondary-color);
+    color: var(--white);
 }
 
-.roda_pe h1 {
-    color: var(--white);
+.roda_pe h3 {
     font-size: 15px;
-    margin: 0 auto;
-}
-
-.nav_container_rodape {
-    margin: 0 auto;
-}
-
-.nav_list_rodape a {
-    color: var(--white);
-    text-decoration: none;
 }
 
 .nav_list_rodape {
@@ -331,49 +336,34 @@ section.header {
     list-style: none;
 }
 
+.nav_list_rodape a {
+    color: var(--white);
+    text-decoration: none;
+}
+
 .nav_list_rodape a:hover {
     border-bottom: solid 2px var(--primary-color);
 }
 
-/* ---------------------------------------------MEDIA QUERIES---------------------------------------------------------------------- */
-
-/* Mobile */
+/* ---------------- MEDIA QUERIES ---------------- */
 @media screen and (max-width: 768px) {
     .center {
-        padding: 0 1%;
+        padding: 0 5%;
     }
 
-    .nav_list {
+    .nav_list, .nav_list_rodape {
         flex-direction: column;
         gap: 15px;
         text-align: center;
     }
 
-    .bloco h1 {
-        font-size: 35px;
-    }
-
-    .bloco p {
-        font-size: 15px;
-    }
-
-    .imgmock {
-        padding-top: 30px;
+    .hero-section h1 {
+        font-size: 32px;
     }
 
     .parceiros {
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .resultados {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-
-    .bloco1, .bloco2, .bloco3 {
-        padding: 20px;
+        gap: 40px;
     }
 
     .conteudo {
@@ -382,37 +372,17 @@ section.header {
 
     .check, .imagem_conteudo {
         width: 100%;
-        margin-bottom: 30px;
-    }
-
-    .check h1 {
-        padding-left: 0;
         text-align: center;
     }
 
-    .check button {
-        margin-left: 0;
-        display: block;
-        margin: 0 auto;
+    .check-item {
+        justify-content: center;
     }
-}
-
-/* Tablet */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .nav_list {
-        gap: 20px;
-    }
-
-    .bloco1, .bloco2, .bloco3 {
-        max-width: 300px;
-    }
-
-    .conteudo {
+    
+    .roda_pe {
         flex-direction: column;
-    }
-
-    .check, .imagem_conteudo {
-        width: 100%;
-        margin-bottom: 30px;
+        gap: 20px;
+        text-align: center;
+        height: auto;
     }
 }
