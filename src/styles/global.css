@@ -1,19 +1,31 @@
 
 @import url("https://use.typekit.net/ibx3sum.css");
 
+:root {
+    --primary-color: #FFDD33;
+    --secondary-color: #255AFF;
+    --text-color: #7E92AC;
+    --white: #fff;
+    --shadow-color: #e4dcdc;
+    --font-family: "raleway", sans-serif;
+    --font-weight-normal: 400;
+    --max-width: 1100px;
+    --padding-side: 2%;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "raleway", sans-serif;
-    font-weight: 400px;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-normal);
     font-style: normal;
 }
 
 .center {
     display: flex;
-    max-width: 1100px;
-    padding: 0 2%;
+    max-width: var(--max-width);
+    padding: 0 var(--padding-side);
     margin: 0 auto;
 }
 
@@ -49,7 +61,7 @@ section.header {
 }
 
 .nav_list a:hover {
-    border-bottom: solid 2px #FFDD33;
+    border-bottom: solid 2px var(--primary-color);
 }
 
 
@@ -64,9 +76,10 @@ section.header {
 }
 
 .imgmock {
-    width: 750px;
+    max-width: 750px;
+    width: 100%;
+    height: auto;
     padding-top: 50px;
-
 }
 
 /* ------------------------------------LOGOS PARCEIROS-------------------------------------------------------------- */
@@ -77,10 +90,13 @@ section.header {
     justify-content: space-evenly;
     padding-top: 100px;
     width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .parceiros > img {
-    width: 150px;
+    max-width: 150px;
+    height: auto;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------- */
@@ -100,19 +116,27 @@ section.header {
 
 .resultados {
     padding-top: 100px;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.resultados p {
+    color: var(--text-color);
 }
 
 .bloco1, .bloco2, .bloco3 {
-    width: 450px;
+    max-width: 450px;
+    width: 100%;
     min-height: 300px;
-    border: 3px solid #fff;
+    border: 3px solid var(--white);
     border-radius: 10px;
-    box-shadow: 5px 5px 20px 5px #e4dcdc;
+    box-shadow: 5px 5px 20px 5px var(--shadow-color);
     padding: 40px;
     transition: 0.3s;
 }
@@ -145,11 +169,165 @@ section.header {
     border-radius: 5px;
     padding: 13px;
     font-size: 15px;
-    background-color: #FFDD33;
+    background-color: var(--primary-color);
     transition: 0.4s;
     cursor: pointer;
 }
 
 .btn_cta:hover {
     transform: scale(1.03);
+}
+
+/* ---------------------------------------------BENEFICIOS---------------------------------------------------------------------- */
+
+.beneficios {
+    padding: 50px 0;
+}
+
+.conteudo {
+    display: flex;
+    align-items: center;
+}
+
+.check {
+    width: 40%;
+}
+
+.imagem_conteudo {
+    width: 60%;
+}
+
+.check img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 70px;
+}
+
+.check p {
+    color: var(--text-color);
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.check span {
+    display: inline-block;
+    width: calc(100% - 70px);
+}
+
+.imagem_conteudo img {
+    max-width: 100%;
+}
+
+.check h1 {
+    padding-left: 40px;
+}
+
+.check button {
+    padding: 15px 25px 15px 25px;
+    margin-left: 70px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    transition: 0.4s;
+}
+
+.check button:hover{
+    transform: scale(1.03);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------DEPOIMENTOS---------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------MEDIA QUERIES---------------------------------------------------------------------- */
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .center {
+        padding: 0 1%;
+    }
+
+    .nav_list {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .bloco h1 {
+        font-size: 35px;
+    }
+
+    .bloco p {
+        font-size: 15px;
+    }
+
+    .imgmock {
+        padding-top: 30px;
+    }
+
+    .parceiros {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .resultados {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .bloco1, .bloco2, .bloco3 {
+        padding: 20px;
+    }
+
+    .conteudo {
+        flex-direction: column;
+    }
+
+    .check, .imagem_conteudo {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .check h1 {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .check button {
+        margin-left: 0;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .nav_list {
+        gap: 20px;
+    }
+
+    .bloco1, .bloco2, .bloco3 {
+        max-width: 300px;
+    }
+
+    .conteudo {
+        flex-direction: column;
+    }
+
+    .check, .imagem_conteudo {
+        width: 100%;
+        margin-bottom: 30px;
+    }
 }
