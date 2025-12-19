@@ -14,7 +14,6 @@
     margin: 0;
     box-sizing: border-box;
     font-family: var(--font-family);
-    font-weight: normal;
     font-style: normal;
 }
 
@@ -236,84 +235,82 @@ html {
 }
 
 /* ---------------- DEPOIMENTOS  ---------------- */
-.depoimentos {
-    padding: 50px 0;
-    background-color: #fafafa;
-}
-
-.titulo {
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 30px;
-}
-
-.box_depoimentos {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding-bottom: 30px;
-}
 
 /* Depoimentos */
-.card-depoimento {
+.depoimentos{
+    background-color: #FBFCFE;
+    padding:40px 0;
+}
+
+.depoimentos > h1{
     text-align: center;
-    max-width: 350px;
-    width: 100%;
-    background: var(--white);
-    border: 1px solid #eee;
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
-    padding: 40px 20px;
-    transition: 0.3s;
+    font-size: 50px;
 }
 
-.card-depoimento:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+.container-slider{
+    overflow:hidden;
+    padding:40px 0;   
 }
 
-.card-depoimento img {
-    margin-bottom: 15px;
+.container-slider-single{
+    float: left;
+    background-color:white;
+    text-align: center;
+    padding:15px;
+    border-radius:10px;
 }
 
-.card-depoimento p.cargo {
-    color: var(--text-color);
-    font-size: 0.9rem;
-    margin-bottom: 15px;
+.container-slider-single p{
+    margin:15px 0;
+    color:#7E92AC;
+    font-size: 14px;
 }
 
-.card-depoimento p:not(.cargo) {
-    color: #555;
-    font-style: italic;
-    margin-bottom: 20px;
-    line-height: 1.5;
+.slick-slide {
+    margin-left:27px;
+
+  }
+
+.slick-list {
+    margin-left:-27px;
+   
+  }
+
+/****SLICK SLIDER****/
+
+.slick-dotted ul{
+    display: block;
+	list-style-type: none;
+	text-align: center;
+	position: relative;
+	top:30px;
 }
 
-/* Bolinhas de Navegação */
-.nav-dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+.slick-dotted li{
+	display: inline-block;
+	margin: 0 7px;
 }
 
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: none;
-    background-color: var(--text-color);
-    opacity: 0.5;
-    cursor: pointer;
-    transition: 0.3s;
+.slick-dotted button:focus{
+	outline: 0;
 }
 
-.dot.active, .dot:hover {
-    background-color: var(--secondary-color);
-    opacity: 1;
-    transform: scale(1.2);
+.slick-dotted li button{
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	color: #d8d8d8;
+	border-width: 0;
+	background: #d8d8d8;
+	opacity: 1;
+	cursor: pointer;
 }
+
+li.slick-active button{
+	background: #373855;
+	color: #373855;
+}
+.slick-slide:focus { outline: none; }
 
 /* ---------------- RODAPÉ ---------------- */
 .roda_pe {
@@ -379,6 +376,11 @@ html {
         justify-content: center;
     }
     
+    .lista-beneficios,.img-beneficios{
+        width:100%;
+        margin-bottom: 30px;
+    }
+
     .roda_pe {
         flex-direction: column;
         gap: 20px;
